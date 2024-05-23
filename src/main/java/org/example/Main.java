@@ -7,7 +7,7 @@ public class Main {
 
         Scanner leitura = new Scanner(System.in);
         String pronto;
-        int resposta;
+        int resposta =(int) Math.round(Math.random()*10);
         int tentativa;
 
 
@@ -26,14 +26,13 @@ public class Main {
 
         switch (pronto) {
             case "s":
-                resposta = 4;
-                System.out.println("Qual número entre 0 e 10 estou pensando?");
-                tentativa = leitura.nextInt();
-                if(tentativa == resposta){
-                    System.out.println("Parabéns, você acertou!");
-                }else{
-                    System.out.println("Que pena, você errou!");
-                }
+               jogo_for();
+
+
+
+
+
+
                 break;
             case "n":
                 System.out.println("Até mais,então.");
@@ -44,4 +43,40 @@ public class Main {
 
         }
     }
+
+    public static void jogo_for() {
+
+
+        Scanner leitura = new Scanner(System.in);
+        String pronto;
+        int resposta =(int) Math.round(Math.random()*10);
+        int tentativa;
+
+
+
+
+
+        for(int contador = 0;contador<10;contador++){
+            System.out.println("Qual número entre 0 e 10 estou pensando?");
+            tentativa = leitura.nextInt();
+            if(tentativa == resposta){
+                System.out.println("#############################");
+                System.out.println("🎉Parabéns , você acertou!🎉!");
+                System.out.println("##############################");
+                System.out.println();
+            }else{
+                System.out.println("##############################");
+                System.out.println(" # ❌Que pena, você errou!❌ #");
+                System.out.println("##############################");
+                System.out.println("A resposta era "+resposta);
+            }
+
+
+            resposta=(int) Math.round(Math.random()*10);
+
+
+        }
+
+    }
+
 }
